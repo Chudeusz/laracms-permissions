@@ -1,0 +1,19 @@
+{
+    "name": "chudeusz/laracms-permissions",
+    "description": "Adding permissions to LaraCMS",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kamil",
+            "email": "chudeusz@soswinformatyka.pl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Chudeusz\\Permissions\\": "src/"
+        }
+    }
+}
