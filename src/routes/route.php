@@ -1,6 +1,6 @@
 <?php
 
-Route::get('permission', [
-    'as' => 'permission.index',
-    'uses' => 'Chudeusz\Permissions\Http\Controllers\PermissionController@index'
+Route::get('/permission/{permission}/{user}/{value}', [
+    'as' => 'permission.update',
+    'uses' => 'Chudeusz\Permissions\Http\Controllers\PermissionController@update'
 ]);

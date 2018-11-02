@@ -12,12 +12,7 @@ class PermissionsServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/routes/route.php');
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
-        $this->publishes([
-            __DIR__ . '/Permission.php' => app_path('Permission.php'),
-            __DIR__ . '/User.php' => app_path('User.php'),
-            __DIR__ . '/Role.php' => app_path('Role.php'),
-            __DIR__ . '/UserRole.php' => app_path('UserRole.php'),
-        ]);
+//        $this->loadTranslationsFrom(__DIR__ . '/lang');
         $this->registerPermissions();
     }
 

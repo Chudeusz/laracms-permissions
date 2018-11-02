@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace Chudeusz\Permissions;
 
-use App\Repository\UsersRepository;
+use Chudeusz\Permissions\Repository\UsersRepository;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\ResetPasswordNotification as ResetPasswordNotification;

@@ -2,7 +2,8 @@
 
 namespace Chudeusz\Permissions\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use Session;
 
@@ -21,9 +22,19 @@ class PermissionController extends Controller
         $this->session = $session;
     }
 
-    public function index(Request $request)
+    public function update($permission, $user, $value)
     {
+        $u = User::findOrFail($user);
+        $perms = json_decode($u['permissions']);
+        foreach ($perms as $perm => $p)
+        {
+            if($perm == $permission) {
+                $perms->$perm = $value;
+                $u->setPermissions(json_encode($perms));
+                $u->save();
+            }
+        }
 
-        return redirect()->route('home.index');
+        return response()->json([$u]);
     }
 }
