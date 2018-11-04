@@ -15,12 +15,5 @@
         "psr-4": {
             "Chudeusz\\Permissions\\": "src/"
         }
-    },
-    "extra": {
-        "laravel": {
-            "providers": {
-                "Chudeusz\\Permissions\\PermissionsServiceProvider"
-            }
-        }
     }
 }

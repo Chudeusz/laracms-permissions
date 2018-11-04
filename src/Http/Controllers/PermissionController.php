@@ -29,12 +29,21 @@ class PermissionController extends Controller
         foreach ($perms as $perm => $p)
         {
             if($perm == $permission) {
-                $perms->$perm = $value;
+                $perms->$perm = $this->parseValue($value);
                 $u->setPermissions(json_encode($perms));
                 $u->save();
             }
         }
 
-        return response()->json([$u]);
+        return response()->json(['user' => $u]);
+    }
+
+    protected function parseValue($value)
+    {
+        if($value == "true") {
+            return true;
+        }
+
+        return false;
     }
 }
