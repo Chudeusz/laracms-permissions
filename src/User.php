@@ -3,6 +3,7 @@
 namespace Chudeusz\Permissions;
 
 use App\Like;
+use App\Post;
 use Chudeusz\Permissions\Repository\UsersRepository;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
