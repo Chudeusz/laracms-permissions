@@ -12,7 +12,6 @@ class PermissionsServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/routes/route.php');
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
-//        $this->loadTranslationsFrom(__DIR__ . '/lang');
         $this->registerPermissions();
     }
 
@@ -23,32 +22,13 @@ class PermissionsServiceProvider extends ServiceProvider
 
     public function registerPermissions()
     {
-        Gate::define('create-post', function (\App\User $user){
-            return $user->hasAccess(['create-post']);
-        });
+        foreach(config('permissions') as $config)
+        {
+            Gate::define($config['name'], function (\App\User $user) use ($config){
+                return $user->hasAccess([$config['permission']]);
+            });
+        }
 
-        Gate::define('update-post', function (\App\User $user) {
-            return $user->hasAccess(['update-post']);
-        });
 
-        Gate::define('delete-post', function (\App\User $user) {
-            return $user->hasAccess(['delete-post']);
-        });
-
-        Gate::define('show-post', function (\App\User $user) {
-            return $user->hasAccess(['show-post']);
-        });
-
-        Gate::define('like-post', function (\App\User $user) {
-            return $user->hasAccess(['like-post']);
-        });
-
-        Gate::define('add-comment', function (\App\User $user) {
-            return $user->hasAccess(['add-comment']);
-        });
-
-        Gate::define('show-comments', function (\App\User $user) {
-            return $user->hasAccess(['show-comments']);
-        });
     }
 }
