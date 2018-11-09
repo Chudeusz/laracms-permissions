@@ -5,7 +5,7 @@ namespace Chudeusz\Permissions;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Permission
+ * Chudeusz\Permissions\Permission
  *
  * @property int $id
  * @property string $name
@@ -36,7 +36,7 @@ class Permission extends Model
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -52,7 +52,7 @@ class Permission extends Model
     /**
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = $name;
     }
@@ -68,7 +68,7 @@ class Permission extends Model
     /**
      * @param string $permission
      */
-    public function setPermission(string $permission)
+    public function setPermission($permission)
     {
         $this->permission = $permission;
     }
@@ -84,7 +84,7 @@ class Permission extends Model
     /**
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->description = $description;
     }
