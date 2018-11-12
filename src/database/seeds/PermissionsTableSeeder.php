@@ -21,6 +21,7 @@ class PermissionsTableSeeder extends Seeder
             $permission->setName($p['name']);
             $permission->setPermission($p['permission']);
             $permission->setDescription($p['permission']);
+            $permission->setDefault($p['default']);
             $permission->save();
 
             echo 'Added Permission: '. $p['name'] . ' '.PHP_EOL;

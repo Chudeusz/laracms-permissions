@@ -62,6 +62,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function setDefaultPermissions()
+    {
+        $permissions = Permission::all(['name', 'default']);
+        $permissionForUser = [];
+
+        foreach($permissions as $permission)
+        {
+            $permissionForUser[$permission['name']] = $permission['default'] ? true : false;
+        }
+
+        return $permissionForUser;
+    }
+
     public function isOnline()
     {
         return Cache::has('user-is-online-'.$this->id);

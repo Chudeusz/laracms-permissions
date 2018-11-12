@@ -5,12 +5,13 @@ namespace Chudeusz\Permissions;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Chudeusz\Permissions\Permission
+ * App\Permission
  *
  * @property int $id
  * @property string $name
  * @property string $permission
  * @property string $description
+ * @property string $default
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|Permission whereCreatedAt($value)
@@ -36,7 +37,7 @@ class Permission extends Model
     /**
      * @param int $id
      */
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -52,7 +53,7 @@ class Permission extends Model
     /**
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
         $this->name = $name;
     }
@@ -68,7 +69,7 @@ class Permission extends Model
     /**
      * @param string $permission
      */
-    public function setPermission($permission)
+    public function setPermission(string $permission)
     {
         $this->permission = $permission;
     }
@@ -84,10 +85,24 @@ class Permission extends Model
     /**
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }
 
+    /**
+     * @return string
+     */
+    public function getDefault()
+    {
+        return $this->default;
+    }
 
+    /**
+     * @param string $description
+     */
+    public function setDefault(bool $default)
+    {
+        $this->default = $default;
+    }
 }
