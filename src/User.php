@@ -62,6 +62,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * @return array
+     */
     public function setDefaultPermissions()
     {
         $permissions = Permission::all(['name', 'default']);
