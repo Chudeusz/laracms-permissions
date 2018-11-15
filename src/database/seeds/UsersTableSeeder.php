@@ -35,6 +35,7 @@ class UsersTableSeeder extends Seeder
                     }
 
                 }
+                ksort($permissions);
                 $u->setPermissions(json_encode($permissions));
                 $u->save();
                 $u->roles()->attach(config('datafixtures.users.list.'.$key.'.role'));

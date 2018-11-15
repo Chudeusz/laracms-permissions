@@ -15,6 +15,7 @@ class PermissionsTableSeeder extends Seeder
     public function run()
     {
         $permissions = config('permissions');
+        ksort($permissions);
         foreach($permissions as $p)
         {
             $permission = new Permission();
