@@ -1,6 +1,6 @@
 <?php
 
-namespace Chudeusz\Commands;
+namespace Chudeusz\Permissions\Commands;
 
 use Illuminate\Console\Command;
 
