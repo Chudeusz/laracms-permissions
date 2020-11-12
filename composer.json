@@ -11,7 +11,6 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "laravel/framework": "7.*",
         "php": "^7.2"
     },
     "autoload": {
